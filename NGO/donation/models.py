@@ -1,0 +1,22 @@
+from django.db import models
+
+class Donation(models.Model):
+    ID = models.AutoField(primary_key=True)
+    Firstname = models.CharField(max_length=15, null=True)
+    Lastname = models.CharField(max_length=15, null=True)
+    CMA = models.CharField(max_length=15, null=True)
+    Phone = models.CharField(max_length=15, null=True)
+    Email = models.CharField(max_length=25, null=True)
+    Address1 = models.CharField(max_length=30, null=True)
+    Address2 = models.CharField(max_length=30, null=True)
+    City = models.CharField(max_length=15, null=True)
+    State = models.CharField(max_length=15, null=True)
+    Zip = models.CharField(max_length=10, null=True)
+    Country = models.CharField(max_length=15, null=True)
+    Urbanization = models.CharField(max_length=50, null=True)
+    GeneralDonationFund = models.DecimalField(max_digits=8, decimal_places=2, null=True)
+    RunForTheSon2017 = models.CharField(max_length=50, null=True)
+    MissionTripSponsorship = models.CharField(max_length=50, null=True)
+    MemorialGift = models.CharField(max_length=50, null=True)
+    CreatedDate = models.DateTimeField(auto_now_add=True)
+    UpdatedDate = models.DateTimeField(auto_now=True)
