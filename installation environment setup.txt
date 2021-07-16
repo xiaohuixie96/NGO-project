@@ -1,0 +1,9 @@
+python -m venv myvenv
+python -m pip install –upgrade pip
+pip install django
+python -m pip install django djangorestframework
+pip install mysqlclient
+
+
+npm install -g @angular/cli
+npm install
