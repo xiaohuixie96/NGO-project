@@ -8,7 +8,6 @@ import { UserManagementComponent } from './user-management/user-management.compo
 import { DonationComponent } from './donation/donation.component';
 import { HomeComponent } from './home/home.component';
 import { RegistrationComponent } from './registration/registration.component';
-import { PageNotFountComponent } from './page-not-fount/page-not-fount.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     DonationComponent,
     HomeComponent,
     RegistrationComponent,
-    PageNotFountComponent,
     PageNotFoundComponent
   ],
   imports: [
