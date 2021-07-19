@@ -9,14 +9,14 @@ class UserSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class DonationManagementSerializer(serializers.ModelSerializer):
+    # get foreign field 
     donationModel = serializers.PrimaryKeyRelatedField(
         read_only=False, queryset=Donation.objects.all())
-
+    
     class Meta:
         model = Profile
         fields = ('Firstname', 'Lastname',
             'donationModel')
-    
 
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:

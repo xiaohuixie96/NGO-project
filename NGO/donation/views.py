@@ -9,13 +9,15 @@ from django.contrib.auth.models import User
 class UserManagement(viewsets.ModelViewSet):
  #   permissions_classes = [permissions.IsAuthenticated]
     queryset = User.objects.all()
-    serializers_class = UserSerializer
+    serializer_class = UserSerializer
 
 class DonationManagement(viewsets.ModelViewSet):
  #   permissions_classes = [permissions.IsAuthenticated]
+    queryset = Profile.objects.all()
     serializer_class = DonationManagementSerializer
 
 class Donation(viewsets.ModelViewSet):
  #   permissions_classes = [permissions.IsAuthenticated]
+    queryset = Donation.objects.all()
     serializer_class = DonationSerializer
     
