@@ -6,20 +6,18 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = '__all__'
-
-class DonationManagementSerializer(serializers.ModelSerializer):
-    # get foreign field 
-    #donationModel = serializers.PrimaryKeyRelatedField(
-    #    read_only=False, queryset=Donation.objects.all())
-    
-    class Meta:
-        model = Profile
-        fields = '__all__'
+        fields = ('first_name', 'last_name', 'email', 'is_superuser')
 
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donation
         fields = '__all__'
+
+class DonationManagementSerializer(serializers.ModelSerializer):
+    donations = serializers.RelatedField(many=True, read_only=True)
+    class Meta:
+        model = Profile
+        #fields = '__all__'
+        fields = ['Firstname', 'donations']
 
 
