@@ -21,5 +21,3 @@ class DonationManagementSerializer(serializers.ModelSerializer):
         fields = ['Firstname', 'donations']
 
 
-
-

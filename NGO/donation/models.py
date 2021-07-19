@@ -18,6 +18,7 @@ class Donation(models.Model):
     Title = models.CharField(max_length=22, choices=Title_CHOICES, default='')
     DonationType = models.CharField(max_length=2, choices=DonationType_CHOICES, default='')
     Amount = models.DecimalField(max_digits=8, decimal_places=2, null=True)
+
     CreatedDate = models.DateTimeField(auto_now_add=True)
     UpdatedDate = models.DateTimeField(auto_now=True)
 
@@ -35,5 +36,6 @@ class Profile(models.Model):
     Zip = models.CharField(max_length=10, null=True)
     Country = models.CharField(max_length=15, null=True)
     Donations = models.ForeignKey(Donation, related_name='donations', on_delete=models.CASCADE, null=True)
+
 
 
