@@ -11,13 +11,13 @@ class UserManagement(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-class DonationManagement(viewsets.ModelViewSet):
- #   permissions_classes = [permissions.IsAuthenticated]
-    queryset = Profile.objects.all()
-    serializer_class = DonationManagementSerializer
-
-class Donation(viewsets.ModelViewSet):
+class ProdileView(viewsets.ModelViewSet):
  #   permissions_classes = [permissions.IsAuthenticated]
     queryset = Donation.objects.all()
     serializer_class = DonationSerializer
+
+class DonationView(viewsets.ModelViewSet):
+ #   permissions_classes = [permissions.IsAuthenticated]
+    queryset = DonationType.objects.all()
+    serializer_class = DonationTypeSerializer
     
