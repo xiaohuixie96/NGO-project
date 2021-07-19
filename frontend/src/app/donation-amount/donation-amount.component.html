@@ -1,0 +1,59 @@
+<p>{{selectedType}}</p>
+<div class="container-fluid">
+    <br>
+      <h2>Donation</h2>
+      <mat-card>
+        <form #typeAmountForm="ngForm" (ngSubmit)="onSubmit(typeAmountForm)" novalidate>
+
+          <div class="form-group">
+            <label>Type A $</label>
+            <input type="text" #amountA="ngModel" required pattern="^[0-9]+$" class="form-control" name="amountA" [(ngModel)]="amountDict['Type A']"
+            [class.is-invalid]="amountA.invalid && amountA.touched">
+            <div *ngIf="amountA.touched && amountA.errors">
+              <div class="alert alert-danger" *ngIf="amountA.errors.required">amount is required</div>
+              <div class="alert alert-danger" *ngIf="amountA.errors.minlength">amount should be Numbers</div>
+            </div>
+            <input type="checkbox" class="form-control" name="TypeACheck" [(ngModel)]="typeDict['Type A']">
+          </div>
+
+          <div class="form-group">
+            <label>Type B $</label>
+            <input type="text" #amountB="ngModel" required pattern="^[0-9]+$" class="form-control" name="amountB" [(ngModel)]="amountDict['Type B']"
+            [class.is-invalid]="amountB.invalid && amountB.touched">
+            <div *ngIf="amountB.touched && amountB.errors">
+              <div class="alert alert-danger" *ngIf="amountB.errors.required">amount is required</div>
+              <div class="alert alert-danger" *ngIf="amountB.errors.minlength">amount should be Numbers</div>
+            </div>
+            <input type="checkbox" class="form-control" name="TypeBCheck" [(ngModel)]="typeDict['Type B']">
+          </div>
+
+          <div class="form-group">
+            <label>Type C $</label>
+            <input type="text" #amountC="ngModel" required pattern="^[0-9]+$" class="form-control" name="amountC" [(ngModel)]="amountDict['Type C']"
+            [class.is-invalid]="amountC.invalid && amountC.touched">
+            <div *ngIf="amountC.touched && amountC.errors">
+              <div class="alert alert-danger" *ngIf="amountC.errors.required">amount is required</div>
+              <div class="alert alert-danger" *ngIf="amountC.errors.minlength">amount should be Numbers</div>
+            </div>
+            <input type="checkbox" class="form-control" name="TypeBCheck" [(ngModel)]="typeDict['Type C']">
+
+          </div>
+
+          <div class="form-group">
+            <label>Type D $</label>
+            <input type="text" #amountD="ngModel" required pattern="^[0-9]+$" class="form-control" name="amountD" [(ngModel)]="amountDict['Type D']"
+            [class.is-invalid]="amountD.invalid && amountD.touched">
+            <div *ngIf="amountD.touched && amountD.errors">
+              <div class="alert alert-danger" *ngIf="amountD.errors.required">amount is required</div>
+              <div class="alert alert-danger" *ngIf="amountD.errors.minlength">amount should be Numbers</div>
+            </div>
+            <input type="checkbox" class="form-control" name="TypeBCheck" [(ngModel)]="typeDict['Type D']">
+          </div>
+
+          <!-- <button class="btn btn-primary" [disabled]="empForm.form.invalid" type="submit">Submit form</button> -->
+          <button mat-flat-button color="accent">Submit form</button>
+        </form>
+    </mat-card>
+    <br>
+</div>
+<!--p>Amount: {{amountDict['TypeA']}}, {{typeDict['Type A']}}</p-->
