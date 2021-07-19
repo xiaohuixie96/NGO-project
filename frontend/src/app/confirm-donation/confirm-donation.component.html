@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+    <!--p [innerHTML]="e1.name">/p-->
+    <!--p>Here is Child App app-display-employee:</p-->
+<table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>CMA</th>
+        <th>phone</th>
+        <th>email</th>
+        <th>address1</th>
+        <th>address2</th>
+        <th>city</th>
+        <th>state</th>
+        <th>zipCode</th>
+        <th>country</th>
+        <th>unbanization</th>
+        <th>donationType</th>
+        <th>amount</th>
+      </tr>
+    </thead>
+      <tbody>
+        <tr *ngFor="let d of donationList">
+          <th>{{ d.id }}</th>
+          <th>{{ d.firstName }}</th>
+          <th>{{ d.lastName }}</th>
+          <th>{{ d.CMA }}</th>
+          <th>{{ d.phone }}</th>
+          <th>{{ d.email }}</th>
+          <th>{{ d.address1 }}</th>
+          <th>{{ d.address2 }}</th>
+          <th>{{ d.city }}</th>
+          <th>{{ d.state }}</th>
+          <th>{{ d.zipCode }}</th>
+          <th>{{ d.country }}</th>
+          <th>{{ d.unbanization }}</th>
+          <th>{{ d.donationType }}</th>
+          <th>{{ d.amount }}</th>
+        </tr>
+    </tbody>
+</table> 
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</html>
+
+<!--p> Confirm</p>
+<p>{{person.firstName}}</p>
+<p>{{person.lastName}}</p>
+<p>{{person.CMA}}</p>
+<p>{{person.phone}}</p>
+<p>{{person.email}}</p>
+<p>{{person.address1}}</p>
+<p>{{person.address2}}</p>
+<p>{{person.city}}</p>
+<p>{{person.state}}</p>
+<p>{{person.zipCode}}</p>
+<p>{{person.country}}</p>
+<p>{{person.unbanization}}</p>
+<p>{{person.donationType}}</p>
+<p>{{person.amount}}</p-->
