@@ -1,6 +1,0 @@
-python -m pip install django djangorestframework
-pip install mysqlclient
-pip install djangorestframework-simplejwt
-
-npm install -g @angular/cli
-npm install
