@@ -1,5 +1,3 @@
-NGO/NGO/__pycache__
-NGO/authentication/__pycache__
-NGO/donation/__pycache__
-NGO/donation/migrations/__pycache__
-NGO/myvenv/Lib/site-packages/pip
+*.pyc
+myenv
+__pycache__
