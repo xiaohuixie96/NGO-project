@@ -4,15 +4,15 @@ from django.contrib.auth.models import User
 
 class RegisterSerializer(serializers.ModelSerializer):
     username = serializers.CharField(max_length=15,
-    min_length=8)
+        min_length=8)
     password = serializers.CharField(max_length=15, 
-    min_length=8, write_only=True)
+        min_length=8, write_only=True)
     firstname = serializers.CharField(max_length=25, 
-    min_length=2)
+        min_length=2)
     lastname = serializers.CharField(max_length=25, 
-    min_length=2)
+        min_length=2)
     email = serializers.EmailField(max_length=30, 
-    min_length=4)
+        min_length=4)
 
     class Meta:
         model = User
