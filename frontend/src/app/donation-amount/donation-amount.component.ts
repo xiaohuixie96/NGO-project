@@ -31,7 +31,7 @@ export class DonationAmountComponent implements OnInit {
     this.typeDict[this.selectedType]=true;
 
     for (let type of this.typeList) {
-      this.amountDict[type]=-1;
+      this.amountDict[type]=0;
     }
   }
 
@@ -41,5 +41,4 @@ export class DonationAmountComponent implements OnInit {
     this.donationService.saveDonationList(this.typeDict, this.amountDict);
     this.router.navigate(['/shoppingCart']);
   }
-
 }
