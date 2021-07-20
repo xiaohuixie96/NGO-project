@@ -39,7 +39,7 @@ export class DonationAmountComponent implements OnInit {
     console.log(this.amountDict);
     console.log(this.typeDict);
     this.donationService.saveDonationList(this.typeDict, this.amountDict);
-    this.router.navigate(['/confirmDonation']);
+    this.router.navigate(['/shoppingCart']);
   }
 
 }

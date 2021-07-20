@@ -75,6 +75,11 @@ export class DonationService {
     return this.http.get<string[]>(this._url + "/" + "types").pipe(catchError(this.errorHandler));
   }
 
+  resetDonationList(){
+    this.donationList  = [];
+    this.donationListBS = new BehaviorSubject(this.donationList);
+  }
+
   //postDonation(): Observable<donation>{
   //  return this.http.post<donation>(this._url, this.d).pipe(catchError(this.errorHandler));
   //}

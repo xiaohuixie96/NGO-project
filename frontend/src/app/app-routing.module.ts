@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { UserManagementComponent } from './user-management/user-management.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +21,9 @@ const routes: Routes = [
   { path: 'confirmDonation', component: ConfirmDonationComponent },
   { path: 'donationAmount', component: DonationAmountComponent },
   { path: 'usermanagement', component: UserManagementComponent },
-
+  { path: 'shoppingCart', component: ShoppingCartComponent },
+  { path: 'transaction', component: TransactionComponent },
+  
   { path: '**', component: PageNotFoundComponent }
 ];
 

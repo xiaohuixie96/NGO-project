@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <h1>NGO</h1>
+      <span class="menu-spacer"></span>
+      <div>
+        <a mat-button [routerLink]="'/user'"> User </a>
+        <a mat-button [routerLink]="'/confirmDonation'"> Donation Management</a>
+        <a mat-button [routerLink]="'/donationtype'"> Donation </a>
+        <a mat-button [routerLink]="'/shoppingCart'"><mat-icon>shopping_cart</mat-icon></a>
+        <a mat-button [routerLink]="'/login'"> login</a>
+        
+      </div>
+    </mat-toolbar-row>
+  
+    <mat-toolbar-row>
+        <router-outlet></router-outlet>
+      </mat-toolbar-row>
+  </mat-toolbar>

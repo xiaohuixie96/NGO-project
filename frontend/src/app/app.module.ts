@@ -15,6 +15,19 @@ import { MatCardModule } from '@angular/material/card';
 import { FormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DonationAmountComponent } from './donation-amount/donation-amount.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { RouterModule } from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CommonModule } from '@angular/common';
+import {MatIconModule} from '@angular/material/icon'; 
+import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav'; 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
+import { TransactionComponent } from './transaction/transaction.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +40,11 @@ import { DonationAmountComponent } from './donation-amount/donation-amount.compo
     PageNotFoundComponent,
     DonationTypeComponent,
     ConfirmDonationComponent,
-    DonationAmountComponent
+    DonationAmountComponent,
+    NavbarComponent,
+    ShoppingCartComponent,
+    TransactionComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -35,7 +52,16 @@ import { DonationAmountComponent } from './donation-amount/donation-amount.compo
     MatCardModule,
     FormsModule,
     HttpClientModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MDBBootstrapModule,
+    RouterModule,
+    MatToolbarModule,
+    NgbModule,
+    CommonModule,
+    MatIconModule,
+    MatListModule,
+    MatSidenavModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
