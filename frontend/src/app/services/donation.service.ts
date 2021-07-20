@@ -3,6 +3,8 @@ import { BehaviorSubject, Observable, throwError  } from 'rxjs';
 import { donation, personalnfo } from '../donationClass';
 import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
+import {formatDate} from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root'
@@ -54,6 +56,7 @@ export class DonationService {
         newDonation.unbanization = this.personBS.getValue().unbanization;
         newDonation.donationType = type;
         newDonation.amount = argAmountDict[type];
+        newDonation.date = formatDate(new Date(), 'yyyy/MM/dd', 'en');
         newdonationList.push(newDonation);
         //console.log("newDonation");
         //console.log(newDonation);

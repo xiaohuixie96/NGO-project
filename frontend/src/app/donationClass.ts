@@ -30,4 +30,5 @@ export class donation{
     unbanization:string = "";
     donationType:string = "";
     amount:number = 0;
+    date:string = "";
   }
