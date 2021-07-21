@@ -1,20 +1,21 @@
 from django.conf import settings
-from django.http import response
 from django.shortcuts import render
-from rest_framework import serializers
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework import status
 from .serializers import *
 from django.contrib import auth
 import jwt
+from rest_framework.permissions import AllowAny, IsAuthenticated
+from donation.serializers import UserSerializer
 
 def home(request):
     return render(request, 'home.html')
 
 class RegisterView(GenericAPIView):
+    permission_classes = [AllowAny, ]
     serializer_class = RegisterSerializer
-
+    
     def post(self, request):
         serializer = RegisterSerializer(data=request.data)
         if serializer.is_valid():
@@ -24,6 +25,7 @@ class RegisterView(GenericAPIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 class LoginView(GenericAPIView):
+    permission_classes = [AllowAny, ]
     serializer_class = LoginSerializer
 
     def post(self, request):
@@ -36,8 +38,8 @@ class LoginView(GenericAPIView):
         if user:
             auth_token = jwt.encode(
                 {'username': user.username}, 
-                settings.JWT_SECRET_KEY, algorithm="HS256")
-            serializer = RegisterSerializer(user)
+                settings.SECRET_KEY, algorithm="HS256")
+            serializer = UserSerializer(user)
             data = {'user': serializer.data, 'token': auth_token}
             
             return Response(data, status=status.HTTP_200_OK)
