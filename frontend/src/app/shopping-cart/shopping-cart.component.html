@@ -21,11 +21,11 @@
         <tr *ngFor="let d of donationList">
             <th>{{ d.donationType }}</th>
             <!--th> 1 </th-->
-            <th>{{ d.amount }}</th>
+            <th>{{ d.amount | currency:'USD'}}</th>
           </tr>
     </tbody>
 </table> 
-<p>Total: {{total}}</p>
+<p>Total: {{total | currency:'USD'}}</p>
 <button mat-flat-button color="accent" (click)="onClick()" [routerLink]="'/transaction'">Check Out</button>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

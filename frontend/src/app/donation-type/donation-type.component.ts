@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DonationService } from '../services/donation.service';
 import { Router } from '@angular/router';
+import { donation, personalnfo, donationType } from '../donationClass';
 
 @Component({
   selector: 'app-donation-type',
@@ -8,13 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./donation-type.component.css']
 })
 export class DonationTypeComponent implements OnInit {
-  
-  constructor(private router: Router, private donationService: DonationService) { }
+  dtlist:any;
+  errorMsg:any;
+  constructor(private router: Router, private donationService: DonationService) { 
+  }
 
   ngOnInit(): void {
-    this.donationService.getDonatinoType()
+    this.donationService.getDonationType().subscribe(
+      (data)=> {this.dtlist = data;
+                console.log(data)},
+      (error)=> this.errorMsg = error,
+      () => console.log("Completed"))
   }
-  typeList: string[]=["Type A", "Type B", "Type C", "Type D" ];
+  //typeList: string[]=["Type A", "Type B", "Type C", "Type D" ];
   
   sendType(argType:string){
     this.donationService.setType(argType);

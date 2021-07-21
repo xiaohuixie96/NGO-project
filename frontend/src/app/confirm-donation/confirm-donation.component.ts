@@ -12,6 +12,7 @@ export class ConfirmDonationComponent implements OnInit {
   person : any;
   type: any;
   donationList: any;
+  errorMsg: any;
   constructor(private router: Router, private donationService: DonationService) { }
 
   ngOnInit(): void {
@@ -21,9 +22,14 @@ export class ConfirmDonationComponent implements OnInit {
     this.donationService.typeBS.subscribe(t => {
       this.type = t;
     });
-    this.donationService.donationListBS.subscribe(dlist => {
-      this.donationList = dlist;
-    });
+    //this.donationService.donationListBS.subscribe(dlist => {
+    //  this.donationList = dlist;
+    //});
+    this.donationService.getDonation().subscribe(
+      (data)=> {this.donationList = data;
+                console.log(data)},
+      (error)=> this.errorMsg = error,
+      () => console.log("Completed"))
   }
 
 }

@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable, throwError  } from 'rxjs';
 import { donation, personalnfo, donationType } from '../donationClass';
 import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
-import {formatDate} from '@angular/common';
+import { formatDate } from '@angular/common';
 
 
 @Injectable({
@@ -46,10 +46,11 @@ export class DonationService {
     for (let type in argTypeDict) {
       if (argTypeDict[type] == true){
         var newDonation = new donation();
+        newDonation.user = 1;
         newDonation.firstName = this.personBS.getValue().firstName;
         newDonation.lastName = this.personBS.getValue().lastName;
-        newDonation.CMA = this.personBS.getValue().CMA;
-        newDonation.phone = this.personBS.getValue().phone;
+        newDonation.CMA = Number(this.personBS.getValue().CMA);
+        newDonation.phone = Number(this.personBS.getValue().phone);
         newDonation.email = this.personBS.getValue().email;
         newDonation.address1 = this.personBS.getValue().address1;
         newDonation.address2 = this.personBS.getValue().address2;
@@ -57,22 +58,37 @@ export class DonationService {
         newDonation.state = this.personBS.getValue().state;
         newDonation.zipCode = this.personBS.getValue().zipCode;
         newDonation.country = this.personBS.getValue().country;
-        newDonation.unbanization = this.personBS.getValue().unbanization;
+        newDonation.urbanization = this.personBS.getValue().unbanization;
         newDonation.donationType = type;
-        newDonation.amount = argAmountDict[type];
+        newDonation.amount = Number(argAmountDict[type]);
         newDonation.date = formatDate(new Date(), 'yyyy/MM/dd', 'en');
         newdonationList.push(newDonation);
       }
     }
     this.donationListBS.next(newdonationList);
+
   }
 
-  getDonatinoType(){
+  getDonationType_sevice(){
     this.http.get<donationType[]>(this._url + "/" + "donationtype/").pipe(catchError(this.errorHandler)).subscribe(
       (data)=> {this.donationTypeList = data;
                 console.log(data)},
       (error)=> this.errorMsg = error,() => console.log("Completed"));
+      console.log("this.donationTypeList:");
+      console.log(this.donationTypeList);
       this.donationTypeListBS.next(this.donationTypeList);
+  }
+  getDonationType(){
+    return this.http.get<donationType[]>(this._url + "/" + "donationtype/").pipe(catchError(this.errorHandler));
+  }
+
+  getDonation(){
+    return this.http.get<donation[]>(this._url + "/" + "donation/").pipe(catchError(this.errorHandler));
+  }
+  postDonation(donData:any): Observable<donation[]>{
+    console.log("Sending Data")
+    console.log(donData)
+    return this.http.post<donation[]>(this._url+ "/" + "donation/", donData).pipe(catchError(this.errorHandler));
   }
 
   resetDonationList(){

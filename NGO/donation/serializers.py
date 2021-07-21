@@ -11,14 +11,11 @@ class UserSerializer(serializers.ModelSerializer):
 class DonationTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = DonationType
-        fields = '__all__'
+        fields = ('id', 'type')
 
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donation
-        fields = '__all__'
+        fields = ('firstName', 'lastName', "phone" , "email" , "address1" , "address2" , "city" , 
+        	"state" , "zipCode", "country", "CMA", "urbanization", "amount", "date", "donationType")
         
-
-
-
-

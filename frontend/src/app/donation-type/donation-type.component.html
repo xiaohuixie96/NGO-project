@@ -1,3 +1,6 @@
-<p *ngFor="let type of typeList">
-    <button (click)="sendType(type)">{{type}}</button>
+<!--p *ngFor="let e of dtlist">
+    {{e.type}}
+</p-->
+<p *ngFor="let dt of dtlist">
+    <button (click)="sendType(dt.type)">{{dt.type}}</button>
 </p>
