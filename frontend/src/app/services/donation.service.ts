@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, throwError  } from 'rxjs';
-import { donation, personalnfo } from '../donationClass';
+import { donation, personalnfo, donationType } from '../donationClass';
 import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import {formatDate} from '@angular/common';
@@ -10,10 +10,13 @@ import {formatDate} from '@angular/common';
   providedIn: 'root'
 })
 export class DonationService {
-  private _url:string="http://127.0.0.1:8000/api/donation";
-  
+  private _url:string="http://127.0.0.1:8000";
+  errorMsg:any;
+
   donationType: string = "";
   typeBS: BehaviorSubject<string>;
+  donationTypeList: donationType[] = [];
+  donationTypeListBS: BehaviorSubject<donationType[]>
   person = new personalnfo();
   personBS: BehaviorSubject<personalnfo>;
   //d = new donation();
@@ -25,6 +28,7 @@ export class DonationService {
 
   constructor(private http: HttpClient) { 
     this.typeBS = new BehaviorSubject(this.donationType);
+    this.donationTypeListBS = new BehaviorSubject(this.donationTypeList);
     this.personBS = new BehaviorSubject(this.person);
     this.donationListBS = new BehaviorSubject(this.donationList);
   }
@@ -58,21 +62,17 @@ export class DonationService {
         newDonation.amount = argAmountDict[type];
         newDonation.date = formatDate(new Date(), 'yyyy/MM/dd', 'en');
         newdonationList.push(newDonation);
-        //console.log("newDonation");
-        //console.log(newDonation);
       }
     }
     this.donationListBS.next(newdonationList);
-    //console.log("person:");
-    //console.log(this.personBS);
-    //for(let d in this.donationListBS){
-      //console.log("Donation:");
-      //console.log(d);
-    //}
   }
 
-  getDonatinoType(id:any): Observable<string[]>{
-    return this.http.get<string[]>(this._url + "/" + "types").pipe(catchError(this.errorHandler));
+  getDonatinoType(){
+    this.http.get<donationType[]>(this._url + "/" + "donationtype/").pipe(catchError(this.errorHandler)).subscribe(
+      (data)=> {this.donationTypeList = data;
+                console.log(data)},
+      (error)=> this.errorMsg = error,() => console.log("Completed"));
+      this.donationTypeListBS.next(this.donationTypeList);
   }
 
   resetDonationList(){

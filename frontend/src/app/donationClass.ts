@@ -32,3 +32,8 @@ export class donation{
     amount:number = 0;
     date:string = "";
   }
+
+  export class donationType{
+    id:number = 0;
+    type:string = "";
+  }

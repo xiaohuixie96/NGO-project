@@ -12,6 +12,7 @@ export class DonationTypeComponent implements OnInit {
   constructor(private router: Router, private donationService: DonationService) { }
 
   ngOnInit(): void {
+    this.donationService.getDonatinoType()
   }
   typeList: string[]=["Type A", "Type B", "Type C", "Type D" ];
   
