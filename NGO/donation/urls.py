@@ -6,8 +6,8 @@ from rest_framework import routers
 
 router = routers.DefaultRouter()
 router.register(r'users', UserManagement, basename='users')
-router.register(r'profile', ProdileView, basename='profile')
-router.register(r'donation', DonationView, basename='donation')
+router.register(r'donation', ProdileView, basename='donation')
+router.register(r'donationtype', DonationView, basename='donationtype')
 
 urlpatterns = [
     url('', include(router.urls)),

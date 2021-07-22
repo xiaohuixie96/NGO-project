@@ -12,40 +12,21 @@
 <table class="table table-striped">
     <thead class="thead-dark">
       <tr>
-        <th>Id</th>
         <th>First Name</th>
         <th>Last Name</th>
-        <th>CMA</th>
-        <th>phone</th>
-        <th>email</th>
-        <th>address1</th>
-        <th>address2</th>
-        <th>city</th>
-        <th>state</th>
-        <th>zipCode</th>
-        <th>country</th>
-        <th>unbanization</th>
-        <th>donationType</th>
-        <th>amount</th>
+        <th>Date</th>
+        <th>Amount</th>
+        <th>Type</th>
+
       </tr>
     </thead>
       <tbody>
         <tr *ngFor="let d of donationList">
-          <th>{{ d.id }}</th>
           <th>{{ d.firstName }}</th>
           <th>{{ d.lastName }}</th>
-          <th>{{ d.CMA }}</th>
-          <th>{{ d.phone }}</th>
-          <th>{{ d.email }}</th>
-          <th>{{ d.address1 }}</th>
-          <th>{{ d.address2 }}</th>
-          <th>{{ d.city }}</th>
-          <th>{{ d.state }}</th>
-          <th>{{ d.zipCode }}</th>
-          <th>{{ d.country }}</th>
-          <th>{{ d.unbanization }}</th>
+          <th>{{ d.date | date }}</th>
+          <th>{{ d.amount | currency:'USD' }}</th>
           <th>{{ d.donationType }}</th>
-          <th>{{ d.amount }}</th>
         </tr>
     </tbody>
 </table> 

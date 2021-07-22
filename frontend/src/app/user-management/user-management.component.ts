@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TokenStorageService } from '../services/token-storage.service';
 
 @Component({
   selector: 'app-user-management',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserManagementComponent implements OnInit {
 
-  constructor() { }
+  constructor(private token: TokenStorageService) { }
+
+  Users: any;
 
   ngOnInit(): void {
+    this.token.getUser();
   }
 
 }

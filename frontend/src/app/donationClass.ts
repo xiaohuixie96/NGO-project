@@ -15,7 +15,8 @@ export class personalnfo{
 }
 
 export class donation{
-    id:number = 0;
+    //id:number = 0;
+    user:number = 1;
     firstName:string = "";
     lastName:string = "";
     CMA:number = 0;
@@ -27,7 +28,13 @@ export class donation{
     state:string = "";
     zipCode:number = 0;
     country:string = "";
-    unbanization:string = "";
+    urbanization:string = "";
     donationType:string = "";
     amount:number = 0;
+    date:string = "";
+  }
+
+  export class donationType{
+    id:number = 0;
+    type:string = "";
   }
