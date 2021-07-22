@@ -6,12 +6,13 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'password', 'first_name', 'last_name', 'email', 'is_superuser')
+        fields = ('id', 'username', 'password', 'first_name', 'last_name', 'email', 'is_superuser')
+
 
 class DonationTypeSerializer(serializers.ModelSerializer):
     class Meta:
         model = DonationType
-        fields = '__all__'
+        fields = ('id', 'type')
 
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:

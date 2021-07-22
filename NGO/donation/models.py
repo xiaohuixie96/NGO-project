@@ -6,7 +6,7 @@ class DonationType(models.Model):
 
 class Donation(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE,
-        primary_key='user_id')
+        primary_key='id')
     Firstname = models.CharField(max_length=15, null=True)
     Lastname = models.CharField(max_length=15, null=True)
     Phone = models.CharField(max_length=15, null=True)

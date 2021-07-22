@@ -16,7 +16,7 @@ export class personalnfo{
 
 export class donation{
     //id:number = 0;
-    user:number = 1;
+    user:number = 0;
     firstName:string = "";
     lastName:string = "";
     CMA:number = 0;

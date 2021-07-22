@@ -25,16 +25,21 @@ export class UserManagementComponent implements OnInit {
     );
   }
 
-  detail(id: number){
-    this.router.navigate(['/usermanagement/view', id])
+  detail(user: any){
+    console.log(user)
+    this.router.navigate(['/viewUser', user.id])
   }
 
-  edit(id: number){
-    this.router.navigate(['usermanagement/edit', id])
+  edit(user: any){
+    this.router.navigate(['/editUser', user.id])
+  }
+  
+  reloadPage(): void {
+    window.location.reload();
   }
 
-  delete(id: number){
-    this.userService.deleteUser(id).subscribe(() => {
+  delete(user: any){
+    this.userService.deleteUser(user.id).subscribe(() => {
       this.userService.getUsers().subscribe(
         (data) => this.users = data,
         (error) => this.errorMsg = error

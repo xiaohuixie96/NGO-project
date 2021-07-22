@@ -30,6 +30,7 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserdetailComponent } from './userdetail/userdetail.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 
 @NgModule({
@@ -50,6 +51,7 @@ import { UserdetailComponent } from './userdetail/userdetail.component';
     ProfileComponent,
     EditUserComponent,
     UserdetailComponent,
+    AddUserComponent,
     
   ],
   imports: [

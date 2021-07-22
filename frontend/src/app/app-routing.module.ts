@@ -14,6 +14,7 @@ import { TransactionComponent } from './transaction/transaction.component';
 import { ProfileComponent } from './profile/profile.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserdetailComponent } from './userdetail/userdetail.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,12 +25,13 @@ const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
   { path: 'confirmDonation', component: ConfirmDonationComponent },
   { path: 'donationAmount', component: DonationAmountComponent },
-  { path: 'usermanagement', component: UserManagementComponent,
-      children: [{ path: 'view/:id', component: UserdetailComponent},
-              {path: 'edit/:id', component: EditUserComponent}] },
+  { path: 'usermanagement', component: UserManagementComponent},
+  { path: 'viewUser/:id', component: UserdetailComponent },
+  { path: 'editUser/:id', component: EditUserComponent },
   { path: 'shoppingCart', component: ShoppingCartComponent },
   { path: 'transaction', component: TransactionComponent },
   { path: 'profile', component: ProfileComponent},
+  { path: 'addUser', component: AddUserComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 

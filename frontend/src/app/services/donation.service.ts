@@ -85,6 +85,7 @@ export class DonationService {
   getDonation(){
     return this.http.get<donation[]>(this._url + "/" + "donation/").pipe(catchError(this.errorHandler));
   }
+  
   postDonation(donData:any): Observable<donation[]>{
     console.log("Sending Data")
     console.log(donData)
