@@ -1,0 +1,134 @@
+<div class="container-fluid">
+    <br>
+      <h2>Donation</h2>
+      <mat-card>
+        <form #personForm="ngForm" (ngSubmit)="onSubmit(personForm)" novalidate>
+
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" #Firstname="ngModel" required minlength="3" class="form-control" name="Firstname" [(ngModel)]="personModel.Firstname"
+            [class.is-invalid]="Firstname.invalid && Firstname.touched">
+            <div *ngIf="Firstname.touched && Firstname.errors">
+              <div class="alert alert-danger" *ngIf="Firstname.errors.required">First Name is required</div>
+              <div class="alert alert-danger" *ngIf="Firstname.errors.minlength">First Name should be at least 3 characters long</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" #Lastname="ngModel" class="form-control" required minlength="3" name="Lastname" [(ngModel)]="personModel.Lastname"
+            [class.is-invalid]="Lastname.invalid && Lastname.touched">
+            <div *ngIf="Lastname.touched && Lastname.errors">
+              <div class="alert alert-danger" *ngIf="Lastname.errors.required">Last Name is required</div>
+              <div class="alert alert-danger" *ngIf="Lastname.errors.minlength">Last Name should be at least 3 characters long</div>
+            </div>
+          </div>
+      
+          <div class="form-group">
+            <label>CMA#</label>
+            <input type="text" #CMA="ngModel" required pattern="^[0-9]+$" class="form-control" name="CMA" [(ngModel)]="personModel.CMA"
+            [class.is-invalid]="CMA.invalid && CMA.touched">
+            <div *ngIf="CMA.touched && CMA.errors"> 
+              <div class="alert alert-danger" *ngIf="CMA.errors.required">CMA is required</div>      
+              <div class="alert alert-danger" *ngIf="CMA.errors.pattern">CMA must be Numbers</div>      
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Phone</label>
+            <input type="text" #Phone="ngModel" required pattern="^[0-9]+$" class="form-control" name="Phone" [(ngModel)]="personModel.Phone"
+            [class.is-invalid]="Phone.invalid && Phone.touched">
+            <div *ngIf="Phone.touched && Phone.errors"> 
+              <div class="alert alert-danger" *ngIf="Phone.errors.required">phone is required</div>      
+              <div class="alert alert-danger" *ngIf="Phone.errors.pattern">phone must be Numbers</div>      
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="text" #Email="ngModel" class="form-control" required minlength="1" name="Email" [(ngModel)]="personModel.Email"
+            [class.is-invalid]="Email.invalid && Email.touched">
+            <div *ngIf="Email.touched && Email.errors">
+              <div class="alert alert-danger" *ngIf="Email.errors.required">email is required</div>
+              <div class="alert alert-danger" *ngIf="Email.errors.minlength">email should be at least 1 characters long</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Address 1</label>
+            <input type="text" #Address1="ngModel" class="form-control" required minlength="1" name="Address1" [(ngModel)]="personModel.Address1"
+            [class.is-invalid]="Address1.invalid && Address1.touched">
+            <div *ngIf="Address1.touched && Address1.errors">
+              <div class="alert alert-danger" *ngIf="Address1.errors.required">address1 is required</div>
+              <div class="alert alert-danger" *ngIf="Address1.errors.minlength">address1 should be at least 1 characters long</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Address 2</label>
+            <input type="text" #Address2="ngModel" class="form-control" required minlength="1" name="Address2" [(ngModel)]="personModel.Address2"
+            [class.is-invalid]="Address2.invalid && Address2.touched">
+            <div *ngIf="Address2.touched && Address2.errors">
+              <div class="alert alert-danger" *ngIf="Address2.errors.required">address2 is required</div>
+              <div class="alert alert-danger" *ngIf="Address2.errors.minlength">address2 should be at least 1 characters long</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>City</label>
+            <input type="text" #City="ngModel" class="form-control" required minlength="1" name="City" [(ngModel)]="personModel.City"
+            [class.is-invalid]="City.invalid && City.touched">
+            <div *ngIf="City.touched && City.errors">
+              <div class="alert alert-danger" *ngIf="City.errors.required">city is required</div>
+              <div class="alert alert-danger" *ngIf="City.errors.minlength">city should be at least 1 characters long</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>State</label>
+            <input type="text" #State="ngModel" class="form-control" required minlength="1" name="State" [(ngModel)]="personModel.State"
+            [class.is-invalid]="State.invalid && State.touched">
+            <div *ngIf="State.touched && State.errors">
+              <div class="alert alert-danger" *ngIf="State.errors.required">state is required</div>
+              <div class="alert alert-danger" *ngIf="State.errors.minlength">state should be at least 1 characters long</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Zip/Postal Code</label>
+            <input type="text" #Zip="ngModel" required pattern="^[0-9]+$" class="form-control" name="Zip" [(ngModel)]="personModel.Zip"
+            [class.is-invalid]="Zip.invalid && Zip.touched">
+            <div *ngIf="Zip.touched && Zip.errors"> 
+              <div class="alert alert-danger" *ngIf="Zip.errors.required">zipCode is required</div>      
+              <div class="alert alert-danger" *ngIf="Zip.errors.pattern">zipCode must be Numbers</div>      
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Country</label>
+            <input type="text" #Country="ngModel" class="form-control" required minlength="1" name="Country" [(ngModel)]="personModel.Country"
+            [class.is-invalid]="Country.invalid && Country.touched">
+            <div *ngIf="Country.touched && Country.errors">
+              <div class="alert alert-danger" *ngIf="Country.errors.required">country is required</div>
+              <div class="alert alert-danger" *ngIf="Country.errors.minlength">country should be at least 1 characters long</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Unbanization</label>
+            <input type="text" #Unbanization="ngModel" class="form-control" required minlength="1" name="Unbanization" [(ngModel)]="personModel.Unbanization"
+            [class.is-invalid]="Unbanization.invalid && Unbanization.touched">
+            <div *ngIf="Unbanization.touched && Unbanization.errors">
+              <div class="alert alert-danger" *ngIf="Unbanization.errors.required">Unbanization is required</div>
+              <div class="alert alert-danger" *ngIf="Unbanization.errors.minlength">Unbanization should be at least 1 characters long</div>
+            </div>
+          </div>
+
+          <!-- <button class="btn btn-primary" [disabled]="empForm.form.invalid" type="submit">Submit form</button> -->
+          <button mat-flat-button color="accent" [routerLink]="''">Cancel</button>
+          <button mat-flat-button color="accent">Submit form</button>
+        </form>
+    </mat-card>
+      <!-- <div class="alert alert-danger" *ngIf="errorMsg">
+        {{errorMsg}}
+      </div> -->
