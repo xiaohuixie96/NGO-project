@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'donationtype', component: DonationTypeComponent , canActivate:[RouteguardGuard]},
   { path: 'personInfo', component: PersonComponent , canActivate:[RouteguardGuard]},
   //{ path: 'profile', component: ProfileComponent},
-  { path: 'profile', component: ProfileComponent, canActivate:[RouteguardAdminGuard]},
+  { path: 'profile', component: ProfileComponent, canActivate:[RouteguardGuard]},
   { path: 'confirmDonation', component: ConfirmDonationComponent, canActivate:[RouteguardGuard] },
   { path: 'donationAmount', component: DonationAmountComponent, canActivate:[RouteguardGuard] },
   { path: 'usermanagement', component: UserManagementComponent, canActivate:[RouteguardAdminGuard]},
