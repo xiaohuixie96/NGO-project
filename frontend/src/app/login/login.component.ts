@@ -3,6 +3,7 @@ import { AuthServiceService } from '../services/auth-service.service';
 import { TokenStorageService } from '../services/token-storage.service';
 import { UserService } from '../services/user-service.service';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -19,6 +20,8 @@ export class LoginComponent implements OnInit {
   errorMsg = '';
   username = ''
   currentuser: any
+  user: any;
+  
 
   constructor(private auth: AuthServiceService, private tokenStorage: TokenStorageService, private userService: UserService) { }
 
@@ -38,7 +41,7 @@ export class LoginComponent implements OnInit {
 
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-
+        this.auth.setLoginTrue();
         this.reloadPage();
       },
       err => {

@@ -50,7 +50,7 @@
           </div>
           
           <div class="form-group">
-            <label for="first_name">first Name</label>
+            <label for="first_name">First Name</label>
             <input
               type="text"
               class="form-control"
@@ -62,7 +62,7 @@
               #first_name="ngModel"
             />
             <div class="alert-danger" *ngIf="first_name.errors && f.submitted">
-              <div *ngIf="first_name.errors.required">first_name is required</div>
+              <div *ngIf="first_name.errors.required">First Name is required</div>
               <div *ngIf="first_name.errors.minlength">
                 first_name must be at least 3 characters
               </div>
@@ -85,7 +85,7 @@
               #last_name="ngModel"
             />
             <div class="alert-danger" *ngIf="last_name.errors && f.submitted">
-              <div *ngIf="last_name.errors.required">last Name is required</div>
+              <div *ngIf="last_name.errors.required">Last Name is required</div>
               <div *ngIf="last_name.errors.minlength">
                 last Name must be at least 3 characters
               </div>

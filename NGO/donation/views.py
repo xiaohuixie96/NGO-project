@@ -39,6 +39,7 @@ def user_list(request):
       if userSerializer.is_valid():
          userSerializer.save()
          return JsonResponse(userSerializer.data, status=status.HTTP_201_CREATED) 
+      print(userSerializer.errors); 
       return JsonResponse(userSerializer.errors, status=status.HTTP_400_BAD_REQUEST)
    
    # delete all users 
@@ -82,7 +83,7 @@ def donationType_list(request):
         donationType_serializer = DonationTypeSerializer(data=dt_data)
         if donationType_serializer.is_valid():
             donationType_serializer.save()
-            return JsonResponse(donationType_serializer.data, status=status.HTTP_201_CREATED) 
+            return JsonResponse(donationType_serializer.data, status=status.HTTP_201_CREATED)
         return JsonResponse(donationType_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
    elif request.method == 'DELETE':
