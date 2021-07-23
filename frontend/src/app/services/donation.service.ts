@@ -4,7 +4,7 @@ import { donation, personalnfo, donationType } from '../donationClass';
 import { HttpClient,HttpErrorResponse } from '@angular/common/http';
 import { catchError, retry } from 'rxjs/operators';
 import { formatDate } from '@angular/common';
-
+import { TokenStorageService } from './token-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -26,7 +26,7 @@ export class DonationService {
   
   //newDonation = new donation();
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private token: TokenStorageService) { 
     this.typeBS = new BehaviorSubject(this.donationType);
     this.donationTypeListBS = new BehaviorSubject(this.donationTypeList);
     this.personBS = new BehaviorSubject(this.person);
@@ -46,22 +46,22 @@ export class DonationService {
     for (let type in argTypeDict) {
       if (argTypeDict[type] == true){
         var newDonation = new donation();
-        newDonation.user = 1;
-        newDonation.firstName = this.personBS.getValue().firstName;
-        newDonation.lastName = this.personBS.getValue().lastName;
+        newDonation.user_id = this.personBS.getValue().user_id;
+        newDonation.Firstname = this.personBS.getValue().Firstname;
+        newDonation.Lastname = this.personBS.getValue().Lastname;
         newDonation.CMA = Number(this.personBS.getValue().CMA);
-        newDonation.phone = Number(this.personBS.getValue().phone);
-        newDonation.email = this.personBS.getValue().email;
-        newDonation.address1 = this.personBS.getValue().address1;
-        newDonation.address2 = this.personBS.getValue().address2;
-        newDonation.city = this.personBS.getValue().city;
-        newDonation.state = this.personBS.getValue().state;
-        newDonation.zipCode = this.personBS.getValue().zipCode;
-        newDonation.country = this.personBS.getValue().country;
-        newDonation.urbanization = this.personBS.getValue().unbanization;
-        newDonation.donationType = type;
-        newDonation.amount = Number(argAmountDict[type]);
-        newDonation.date = formatDate(new Date(), 'yyyy/MM/dd', 'en');
+        newDonation.Phone = Number(this.personBS.getValue().Phone);
+        newDonation.Email = this.personBS.getValue().Email;
+        newDonation.Address1 = this.personBS.getValue().Address1;
+        newDonation.Address2 = this.personBS.getValue().Address2;
+        newDonation.City = this.personBS.getValue().City;
+        newDonation.State = this.personBS.getValue().State;
+        newDonation.Zip = this.personBS.getValue().Zip;
+        newDonation.Country = this.personBS.getValue().Country;
+        newDonation.Urbanization = this.personBS.getValue().Unbanization;
+        newDonation.DonationType = type;
+        newDonation.Amount = Number(argAmountDict[type]);
+        newDonation.CreatedDate = formatDate(new Date(), 'yyyy/MM/dd', 'en');
         newdonationList.push(newDonation);
       }
     }
@@ -85,6 +85,11 @@ export class DonationService {
   getDonation(){
     return this.http.get<donation[]>(this._url + "/" + "donation/").pipe(catchError(this.errorHandler));
   }
+
+  getDonationById(id: any){
+    return this.http.get<donation[]>(this._url + "/donation/" + id).pipe(catchError(this.errorHandler));
+  }
+  
   postDonation(donData:any): Observable<donation[]>{
     console.log("Sending Data")
     console.log(donData)

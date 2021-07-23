@@ -22,11 +22,11 @@
     </thead>
       <tbody>
         <tr *ngFor="let d of donationList">
-          <th>{{ d.firstName }}</th>
-          <th>{{ d.lastName }}</th>
-          <th>{{ d.date | date }}</th>
-          <th>{{ d.amount | currency:'USD' }}</th>
-          <th>{{ d.donationType }}</th>
+          <th>{{ d.Firstname }}</th>
+          <th>{{ d.Lastname }}</th>
+          <th>{{ d.CreatedDate | date }}</th>
+          <th>{{ d.Amount | currency:'USD' }}</th>
+          <th>{{ d.DonationType }}</th>
         </tr>
     </tbody>
 </table> 

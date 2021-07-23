@@ -34,7 +34,7 @@ export class ShoppingCartComponent implements OnInit {
       }
       */
       for(let donation of this.donationList){
-        this.total = +this.total + +donation.amount;
+        this.total = +this.total + +donation.Amount;
       }
 
     });

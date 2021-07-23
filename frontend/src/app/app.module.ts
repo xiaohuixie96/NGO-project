@@ -27,6 +27,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { UserdetailComponent } from './userdetail/userdetail.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 
 @NgModule({
@@ -44,6 +48,10 @@ import { TransactionComponent } from './transaction/transaction.component';
     NavbarComponent,
     ShoppingCartComponent,
     TransactionComponent,
+    ProfileComponent,
+    EditUserComponent,
+    UserdetailComponent,
+    AddUserComponent,
     
   ],
   imports: [

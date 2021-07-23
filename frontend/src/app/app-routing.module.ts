@@ -11,6 +11,10 @@ import { RegistrationComponent } from './registration/registration.component';
 import { UserManagementComponent } from './user-management/user-management.component';
 import { ShoppingCartComponent } from './shopping-cart/shopping-cart.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { ProfileComponent } from './profile/profile.component';
+import { EditUserComponent } from './edit-user/edit-user.component';
+import { UserdetailComponent } from './userdetail/userdetail.component';
+import { AddUserComponent } from './add-user/add-user.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,12 +22,16 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'donationtype', component: DonationTypeComponent },
   { path: 'personInfo', component: PersonComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: 'confirmDonation', component: ConfirmDonationComponent },
   { path: 'donationAmount', component: DonationAmountComponent },
-  { path: 'usermanagement', component: UserManagementComponent },
+  { path: 'usermanagement', component: UserManagementComponent},
+  { path: 'viewUser/:id', component: UserdetailComponent },
+  { path: 'editUser/:id', component: EditUserComponent },
   { path: 'shoppingCart', component: ShoppingCartComponent },
   { path: 'transaction', component: TransactionComponent },
-  
+  { path: 'profile', component: ProfileComponent},
+  { path: 'addUser', component: AddUserComponent},
   { path: '**', component: PageNotFoundComponent }
 ];
 

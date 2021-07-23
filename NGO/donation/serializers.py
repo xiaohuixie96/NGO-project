@@ -6,7 +6,8 @@ from .models import *
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ('username', 'password', 'first_name', 'last_name', 'email', 'is_superuser')
+        fields = ('id', 'username', 'password', 'first_name', 'last_name', 'email', 'is_superuser')
+
 
 class DonationTypeSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,6 +17,9 @@ class DonationTypeSerializer(serializers.ModelSerializer):
 class DonationSerializer(serializers.ModelSerializer):
     class Meta:
         model = Donation
-        fields = ('firstName', 'lastName', "phone" , "email" , "address1" , "address2" , "city" , 
-        	"state" , "zipCode", "country", "CMA", "urbanization", "amount", "date", "donationType")
+        fields = '__all__'
         
+
+
+
+

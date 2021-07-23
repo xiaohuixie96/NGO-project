@@ -1,37 +1,37 @@
 export class personalnfo{
-  id:number = 0;
-  firstName:string = "";
-  lastName:string = "";
+  user_id:number = 0;
+  Firstname:string = "";
+  Lastname:string = "";
   CMA:number = 0;
-  phone:number = 0;
-  email:string = "";
-  address1:string = "";
-  address2:string = "";
-  city:string = "";
-  state:string = "";
-  zipCode:number = 0;
-  country:string = "";
-  unbanization:string = "";
+  Phone:number = 0;
+  Email:string = "";
+  Address1:string = "";
+  Address2:string = "";
+  City:string = "";
+  State:string = "";
+  Zip:number = 0;
+  Country:string = "";
+  Unbanization:string = "";
 }
 
 export class donation{
     //id:number = 0;
-    user:number = 1;
-    firstName:string = "";
-    lastName:string = "";
+    user_id:number = 5;
+    Firstname:string = "";
+    Lastname:string = "";
     CMA:number = 0;
-    phone:number = 0;
-    email:string = "";
-    address1:string = "";
-    address2:string = "";
-    city:string = "";
-    state:string = "";
-    zipCode:number = 0;
-    country:string = "";
-    urbanization:string = "";
-    donationType:string = "";
-    amount:number = 0;
-    date:string = "";
+    Phone:number = 0;
+    Email:string = "";
+    Address1:string = "";
+    Address2:string = "";
+    City:string = "";
+    State:string = "";
+    Zip:number = 0;
+    Country:string = "";
+    Urbanization:string = "";
+    DonationType:string = "";
+    Amount:number = 0;
+    CreatedDate:string = "";
   }
 
   export class donationType{
