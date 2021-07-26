@@ -1,6 +1,7 @@
 <!--p *ngFor="let e of dtlist">
     {{e.type}}
 </p-->
+<h1>Select donation type:</h1>
 <p *ngFor="let dt of dtlist">
-    <button (click)="sendType(dt.type)">{{dt.type}}</button>
+    <button mat-raised-button color="primary" (click)="sendType(dt.type)">{{dt.type}}</button>
 </p>
