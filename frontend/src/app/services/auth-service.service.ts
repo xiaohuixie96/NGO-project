@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
 
+
 const AUTH_API = 'http://127.0.0.1:8000/';
 
 const httpOptions = {
@@ -12,11 +13,18 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class AuthServiceService {
-
-  constructor(private http: HttpClient) { }
+  private isloggedIn: boolean;
+  private isAdmin: boolean;
+  private userName:string | undefined;
+  constructor(private http: HttpClient) { 
+    this.isloggedIn=false;
+    this.isAdmin=false;
+  }
+  
 
   login(username: string, password: string):
     Observable<any>{
+      this.isloggedIn=true;
       return this.http.post(AUTH_API + 'token',{
         username, password
       }, httpOptions);
@@ -29,5 +37,29 @@ export class AuthServiceService {
       }, httpOptions);
     }
 
+  isUserLoggedIn(): boolean {
+      return this.isloggedIn;
+  }
 
+  isAdminUser():boolean {
+      if (this.isAdmin) {
+          return true; 
+      }
+      return false;
+  }
+
+  setLoginFalse(): void{
+    this.isloggedIn = false;
+    this.isAdmin = false;
+  }
+  setLoginTrue(): void{
+    this.isloggedIn = true;
+  }
+
+  setAdminFalse(): void{
+    this.isAdmin = false;
+  }
+  setAdminTrue(): void{
+    this.isAdmin = true;
+  }
 }

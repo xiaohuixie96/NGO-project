@@ -21,6 +21,7 @@ export class ConfirmDonationComponent implements OnInit {
   ngOnInit(): void {
     this.donationService.personBS.subscribe(data => {
       this.person = data;
+     
     });
     this.donationService.typeBS.subscribe(t => {
       this.type = t;

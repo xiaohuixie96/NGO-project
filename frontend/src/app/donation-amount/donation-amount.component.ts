@@ -45,6 +45,7 @@ export class DonationAmountComponent implements OnInit {
   ngOnInit(): void {
     this.donationService.typeBS.subscribe(t => {
       this.selectedType = t;
+      //console.log(this.selectedType );
     });
     
     //this.numOfType = this.typeList.length;

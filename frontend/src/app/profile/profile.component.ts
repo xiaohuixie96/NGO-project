@@ -10,7 +10,7 @@ import { UserService } from '../services/user-service.service';
 export class ProfileComponent implements OnInit {
 
   constructor(private tokenStorageService: TokenStorageService, private userService: UserService) { }
-
+  public ifDonated = false;
   user: any;
   errorMsg: any;
   public role = 'User';
@@ -24,6 +24,7 @@ export class ProfileComponent implements OnInit {
           {
             this.role = 'Admin'
           } 
+          
         },
         (error) => {this.errorMsg = error; console.log(error); }
       );

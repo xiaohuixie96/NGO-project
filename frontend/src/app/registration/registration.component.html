@@ -1,6 +1,17 @@
-<div class="col-md-12">
-    <div class="card card-container">
-      <form
+<br>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>Sign Up</h3>
+				<div class="d-flex justify-content-end social_icon">
+					<span><i class="fab fa-facebook-square"></i></span>
+					<span><i class="fab fa-google-plus-square"></i></span>
+					<span><i class="fab fa-twitter-square"></i></span>
+				</div>
+			</div>
+			<div class="card-body">
+				<form
         *ngIf="!isSuccessful"
         name="form"
         (ngSubmit)="f.form.valid && onSubmit()"
@@ -50,7 +61,7 @@
           </div>
           
           <div class="form-group">
-            <label for="first_name">first Name</label>
+            <label for="first_name">First Name</label>
             <input
               type="text"
               class="form-control"
@@ -62,7 +73,7 @@
               #first_name="ngModel"
             />
             <div class="alert-danger" *ngIf="first_name.errors && f.submitted">
-              <div *ngIf="first_name.errors.required">first_name is required</div>
+              <div *ngIf="first_name.errors.required">First Name is required</div>
               <div *ngIf="first_name.errors.minlength">
                 first_name must be at least 3 characters
               </div>
@@ -85,7 +96,7 @@
               #last_name="ngModel"
             />
             <div class="alert-danger" *ngIf="last_name.errors && f.submitted">
-              <div *ngIf="last_name.errors.required">last Name is required</div>
+              <div *ngIf="last_name.errors.required">Last Name is required</div>
               <div *ngIf="last_name.errors.minlength">
                 last Name must be at least 3 characters
               </div>
@@ -113,9 +124,9 @@
             </div>
           </div>
         </div>
-        
+        <br>
         <div class="form-group">
-          <button class="btn btn-primary btn-block">Sign Up</button>
+          <button class="btn btn-info btn-block">Sign Up</button>
         </div>
   
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
@@ -126,5 +137,7 @@
       <div class="alert alert-success" *ngIf="isSuccessful">
         Your registration is successful!
       </div>
-    </div>
-  </div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -8,9 +8,17 @@ main {
     padding: 10px;
 }
 
-TS
-CSS
+
 
 .example-spacer {
   flex: 1 1 auto;
+}
+
+.image{
+    height: 200%;
+    background-image:url('../app/images/background.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }

@@ -23,7 +23,7 @@ export class PersonComponent implements OnInit {
   }
 
   onSubmit(personForm: any){
-    //console.log(this.donationModel);
+    this.personModel.user_id = this.token.getUser().user_id;
     this.donationService.savePersonalnfo(this.personModel);
     this.router.navigate(['/donationAmount']);
   }
