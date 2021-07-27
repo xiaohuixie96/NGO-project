@@ -1,0 +1,15 @@
+h1 {
+    text-align:center;
+}
+
+cite {
+    color: lightsteelblue;
+}
+
+h3 ~ p:hover {
+    overflow: visible;
+    white-space: normal;
+    width: auto;
+    color: skyblue;
+  }
+

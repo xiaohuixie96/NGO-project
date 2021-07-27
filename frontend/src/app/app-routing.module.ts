@@ -17,9 +17,11 @@ import { UserdetailComponent } from './userdetail/userdetail.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { RouteguardGuard } from './services/routeguard.guard';
 import { RouteguardAdminGuard } from './services/routeguard-admin.guard';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: WelcomeComponent},
+  { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'donationtype', component: DonationTypeComponent , canActivate:[RouteguardGuard]},

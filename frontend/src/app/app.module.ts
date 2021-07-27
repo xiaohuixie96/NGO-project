@@ -31,7 +31,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { EditUserComponent } from './edit-user/edit-user.component';
 import { UserdetailComponent } from './userdetail/userdetail.component';
 import { AddUserComponent } from './add-user/add-user.component';
-import {MatButtonModule} from '@angular/material/button'; 
+import {MatButtonModule} from '@angular/material/button';
+import { WelcomeComponent } from './welcome/welcome.component'; 
 
 
 @NgModule({
@@ -53,6 +54,7 @@ import {MatButtonModule} from '@angular/material/button';
     EditUserComponent,
     UserdetailComponent,
     AddUserComponent,
+    WelcomeComponent,
     
   ],
   imports: [
