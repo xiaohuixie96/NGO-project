@@ -1,6 +1,6 @@
-<h1>User Management Page</h1>
+<h1>User Management</h1>
 
-<button type='button' class="btn btn-info" routerLink='/addUser'>Add new employee</button>
+<button type='button' class="btn btn-info" routerLink='/addUser'>Add new User</button>
 <table class="table table-hover">
     <thead>
       <tr>
@@ -19,9 +19,9 @@
         <td>{{u.last_name}}</td>
         <td>{{u.email}}</td>
         <td>{{u.is_superuser}}</td>
-        <td><button type='button' class="btn btn-info" (click)="detail(u)">View</button>
-          <button type='button' class="btn btn-info" (click)="edit(u)">Edit</button>
-          <button type='button' class="btn btn-info" (click)="delete(u)">Delete</button>
+        <td><button type='button' class="btn btn-info" (click)="detail(u)">View</button>&nbsp;
+          <button type='button' class="btn btn-info" (click)="edit(u)">Edit</button>&nbsp;
+          <button type='button' class="btn btn-info" (click)="delete(u)" [disabled]='u.is_superuser'>Delete</button>
         </td>    
       </tr>
     </tbody>
